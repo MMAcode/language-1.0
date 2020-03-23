@@ -1,0 +1,405 @@
+/**
+*
+*
+*
+*
+*
+*
+*
+ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 20px;
+  line-height: 20px, 5; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: white;
+  text-align: center; }
+
+a {
+  display: inline-block; }
+  a:hover {
+    cursor: pointer; }
+
+img {
+  width: 100%;
+  height: auto; }
+
+button {
+  font-size: 20px; }
+  button:hover {
+    cursor: pointer; }
+
+label,
+input {
+  display: block;
+  font-size: 20px !important;
+  padding-bottom: 0.3rem; }
+
+label {
+  padding-top: 1rem; }
+
+.centerIt {
+  display: block;
+  margin: auto !important;
+  text-align: center; }
+
+.button {
+  padding: 1rem;
+  margin: 0.2rem 1.5rem;
+  background: #f7c7c7;
+  border: 1px solid white;
+  text-decoration: none; }
+  .button:hover {
+    background: #f79090;
+    cursor: pointer; }
+
+.inline {
+  display: inline; }
+
+#userStatusWrapper {
+  background: #ebfc8d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  color: #776f02; }
+  #userStatusWrapper #signInOutButton {
+    background: #8b8b8b;
+    color: black;
+    border-color: black; }
+
+#scoreCounter {
+  display: none;
+  background: greenyellow;
+  padding: 5px; }
+
+.pointsCounter {
+  display: flex;
+  flex-direction: column;
+  background: yellow;
+  border: 3px solid #c2c210; }
+  .pointsCounter > p {
+    font-weight: 900;
+    text-decoration: underline solid;
+    background: #c2c210;
+    padding-bottom: 5px; }
+  .pointsCounter .history7days {
+    background: #ffd000;
+    padding: 3px; }
+    .pointsCounter .history7days span:nth-child(n+1) {
+      display: inline-block;
+      width: 35px;
+      height: 25px;
+      margin: 0 2px;
+      font-size: 1.9rem;
+      color: white;
+      background: brown;
+      border-radius: 100%;
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      -ms-border-radius: 100%;
+      -o-border-radius: 100%; }
+  .pointsCounter .pointsCounterMain {
+    display: flex; }
+    .pointsCounter .pointsCounterMain * {
+      flex: 1; }
+
+#container {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 140vh;
+  background-color: #b8b8ee; }
+  #container h1 {
+    padding: 1rem 1rem; }
+  #container #newWord_container {
+    text-align: left;
+    margin: 1rem 2rem;
+    background-color: #9a9af7;
+    padding: 5vmin; }
+
+#training_wrapper {
+  position: relative;
+  height: 100%; }
+  #training_wrapper #mainIcons {
+    display: flex;
+    justify-content: space-between; }
+  #training_wrapper #help .visibleIcon,
+  #training_wrapper #addVocabulary .visibleIcon {
+    margin: 10px 10px 20px 10px;
+    color: #eeff00;
+    max-width: 50px;
+    min-height: 50px; }
+    #training_wrapper #help .visibleIcon:hover,
+    #training_wrapper #addVocabulary .visibleIcon:hover {
+      cursor: pointer; }
+  #training_wrapper #help .invisibleWindow,
+  #training_wrapper #addVocabulary .invisibleWindow {
+    position: absolute;
+    display: none;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 150%;
+    height: auto;
+    background-color: black;
+    z-index: 10000;
+    text-align: left;
+    color: yellow;
+    padding: 5px; }
+    #training_wrapper #help .invisibleWindow p,
+    #training_wrapper #addVocabulary .invisibleWindow p {
+      padding: 5px; }
+    #training_wrapper #help .invisibleWindow a,
+    #training_wrapper #addVocabulary .invisibleWindow a {
+      color: greenyellow;
+      line-height: 1.3;
+      padding: 10px; }
+    #training_wrapper #help .invisibleWindow h1,
+    #training_wrapper #help .invisibleWindow h2,
+    #training_wrapper #addVocabulary .invisibleWindow h1,
+    #training_wrapper #addVocabulary .invisibleWindow h2 {
+      text-align: center;
+      margin-top: 40px; }
+    #training_wrapper #help .invisibleWindow h1,
+    #training_wrapper #addVocabulary .invisibleWindow h1 {
+      color: #0099ff; }
+    #training_wrapper #help .invisibleWindow h2,
+    #training_wrapper #addVocabulary .invisibleWindow h2 {
+      text-decoration: solid underline white; }
+    #training_wrapper #help .invisibleWindow h3,
+    #training_wrapper #help .invisibleWindow h4,
+    #training_wrapper #help .invisibleWindow h5,
+    #training_wrapper #addVocabulary .invisibleWindow h3,
+    #training_wrapper #addVocabulary .invisibleWindow h4,
+    #training_wrapper #addVocabulary .invisibleWindow h5 {
+      text-align: left;
+      margin-top: 30px; }
+    #training_wrapper #help .invisibleWindow h6,
+    #training_wrapper #addVocabulary .invisibleWindow h6 {
+      margin-top: 20px; }
+    #training_wrapper #help .invisibleWindow .closeButton,
+    #training_wrapper #addVocabulary .invisibleWindow .closeButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 10vh;
+      background: #5a5a5a;
+      color: white; }
+      #training_wrapper #help .invisibleWindow .closeButton:hover,
+      #training_wrapper #addVocabulary .invisibleWindow .closeButton:hover {
+        cursor: pointer; }
+  #training_wrapper #mainTitle {
+    display: inline-block;
+    padding-bottom: 30px; }
+  #training_wrapper #mainTitle:hover {
+    cursor: pointer; }
+  #training_wrapper #language_labels span:nth-child(1) {
+    color: red; }
+  #training_wrapper #language_labels span:nth-child(3) {
+    color: blue; }
+  #training_wrapper #words {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center; }
+    #training_wrapper #words * {
+      padding: 1rem 3rem;
+      font-size: 4rem;
+      background-color: white;
+      font-weight: 700;
+      margin-bottom: 1px;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px; }
+  #training_wrapper #levelIndicator {
+    color: lightgray; }
+  #training_wrapper #options {
+    display: none;
+    align-items: center;
+    justify-content: center; }
+    #training_wrapper #options .optionsIcon {
+      background: white;
+      display: none;
+      padding: 3px 8px;
+      margin: 3px;
+      border: 2px solid blue;
+      color: blue;
+      text-decoration: none;
+      box-shadow: 3px 3px 3px 0px grey;
+      border-radius: 15px;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      -ms-border-radius: 15px;
+      -o-border-radius: 15px; }
+      #training_wrapper #options .optionsIcon:hover {
+        cursor: pointer; }
+    #training_wrapper #options .optionsWindow {
+      display: none; }
+    #training_wrapper #options #definitionGoogle .optionsIcon,
+    #training_wrapper #options #changeWords .optionsIcon,
+    #training_wrapper #options #speakWord .optionsIcon {
+      display: inline-block; }
+    #training_wrapper #options #definitionGoogle .optionsWindow,
+    #training_wrapper #options #changeWords .optionsWindow {
+      z-index: 100;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      border: 2px solid black; }
+      #training_wrapper #options #definitionGoogle .optionsWindow h1,
+      #training_wrapper #options #definitionGoogle .optionsWindow h2,
+      #training_wrapper #options #definitionGoogle .optionsWindow h3,
+      #training_wrapper #options #definitionGoogle .optionsWindow h4,
+      #training_wrapper #options #definitionGoogle .optionsWindow h5,
+      #training_wrapper #options #changeWords .optionsWindow h1,
+      #training_wrapper #options #changeWords .optionsWindow h2,
+      #training_wrapper #options #changeWords .optionsWindow h3,
+      #training_wrapper #options #changeWords .optionsWindow h4,
+      #training_wrapper #options #changeWords .optionsWindow h5 {
+        color: purple; }
+      #training_wrapper #options #definitionGoogle .optionsWindow .closeButton,
+      #training_wrapper #options #changeWords .optionsWindow .closeButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 10vh;
+        background: #fbff02;
+        color: black;
+        font-size: 20px; }
+        #training_wrapper #options #definitionGoogle .optionsWindow .closeButton:hover,
+        #training_wrapper #options #changeWords .optionsWindow .closeButton:hover {
+          cursor: pointer; }
+  #training_wrapper #bottonWrapper {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex; }
+  #training_wrapper #b_next,
+  #training_wrapper #threeButtons {
+    width: 100%;
+    background-color: #6060dd;
+    padding: 2rem 1rem; }
+    #training_wrapper #b_next:hover,
+    #training_wrapper #threeButtons:hover {
+      cursor: pointer; }
+  #training_wrapper #threeButtons {
+    display: none;
+    padding: 0;
+    align-items: center;
+    justify-content: center; }
+    #training_wrapper #threeButtons * {
+      flex: 1;
+      height: 100%;
+      padding: 2rem 1rem; }
+    #training_wrapper #threeButtons #BtnDown {
+      background-color: red; }
+    #training_wrapper #threeButtons #BtnStay {
+      background-color: #ffe600; }
+    #training_wrapper #threeButtons #BtnUp {
+      background-color: #04e422; }
+  #training_wrapper #deleteCard {
+    display: flex; }
+
+#googleDrop,
+#normalDrop {
+  border: 2px dotted gray;
+  margin: 1rem;
+  padding: 4rem; }
+
+#googleDrop {
+  background: #dfa1f1; }
+
+#normalDrop {
+  background: #b636f1; }
+
+#cardToCheckAllert {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  background: blue; }
+
+#proccedImport {
+  background: green; }
+
+#cancelImport {
+  background: red; }
+
+#firstTimeUser {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #21c4e0;
+  padding: 10px;
+  text-align: left; }
+  #firstTimeUser input[type="radio"],
+  #firstTimeUser label {
+    display: inline-block; }
+
+#alertForSec {
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  -webkit-transform: translate(50%, -50%);
+  -moz-transform: translate(50%, -50%);
+  -ms-transform: translate(50%, -50%);
+  -o-transform: translate(50%, -50%);
+  background-color: red !important;
+  z-index: 1000000;
+  animation: fadeAway 1s forwards ease-in-out;
+  -webkit-animation: fadeAway 1s forwards ease-in-out; }
+
+@keyframes fadeAway {
+  70% {
+    opacity: 1;
+    transform: translate(50%, -50%);
+    -webkit-transform: translate(50%, -50%);
+    -moz-transform: translate(50%, -50%);
+    -ms-transform: translate(50%, -50%);
+    -o-transform: translate(50%, -50%); }
+  100% {
+    transform: translate(50%, -200%);
+    -webkit-transform: translate(50%, -200%);
+    -moz-transform: translate(50%, -200%);
+    -ms-transform: translate(50%, -200%);
+    -o-transform: translate(50%, -200%);
+    opacity: 0; } }
